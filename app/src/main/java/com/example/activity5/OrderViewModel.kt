@@ -1,14 +1,16 @@
 package com.example.activity5
 
+import androidx.lifecycle.ViewModel
 import com.example.activity5.data.OrderUIState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import java.text.NumberFormat
+import androidx.lifecycle.viewmodel.compose.viewModel
 
 private const val HARGA_PER_CUP = 3000
-class OrderViewModel {
+class OrderViewModel : ViewModel() {
     private val _stateUI = MutableStateFlow(OrderUIState())
     val stateUI: StateFlow<OrderUIState> = _stateUI.asStateFlow()
 
