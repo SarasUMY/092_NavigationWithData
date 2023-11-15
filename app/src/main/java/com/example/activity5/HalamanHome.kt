@@ -42,7 +42,7 @@ fun HalamanHome(
             ),
             border = BorderStroke(1.dp, Color.Black), modifier = Modifier
                 .fillMaxWidth(0.95f)
-                .padding(vertical = 50.dp)
+                .padding(vertical = 200.dp)
                 .align(Alignment.CenterHorizontally)
         ) {
             Column(
@@ -62,7 +62,7 @@ fun HalamanHome(
                     modifier = Modifier.align(Alignment.CenterHorizontally)
                 )
                 Text(
-                    text = "Cekek",
+                    text = "Kampul",
                     color = Color.DarkGray,
                     fontFamily = FontFamily.Cursive,
                     fontSize = 60.sp,
