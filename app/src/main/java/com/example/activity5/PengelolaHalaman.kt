@@ -100,7 +100,7 @@ fun Activity5App(
                     onSelectionChanged = {viewModel.setRasa(it)},
                     onConfirmButtonClicked = {viewModel.setJumlah(it)},
                     onNextButtonClicked = { navController.navigate(PengelolaHalaman.Summary.name) },
-                    onCancelButtonClicked = { cancelOrderAndNavigateToHome(viewModel, navController) }
+                    onCancelButtonClicked = { cancelOrderAndNavigateToFormulir(viewModel, navController) }
                 )
             }
             composable(route = PengelolaHalaman.Summary.name) {
@@ -119,6 +119,14 @@ private fun cancelOrderAndNavigateToHome(
 ) {
     viewModel.resetOrder()
     navController.popBackStack(PengelolaHalaman.Home.name, inclusive = false)
+}
+
+private fun cancelOrderAndNavigateToFormulir(
+    viewModel: OrderViewModel,
+    navController: NavHostController
+) {
+    viewModel.resetOrder()
+    navController.popBackStack(PengelolaHalaman.Formulir.name, inclusive = false)
 }
 
 private fun cancelOrderAndNavigateToRasa(

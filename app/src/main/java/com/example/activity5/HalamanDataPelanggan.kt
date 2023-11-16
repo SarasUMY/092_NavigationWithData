@@ -52,6 +52,8 @@ fun HalamanDataPelanggan(
             fontWeight = FontWeight.Bold
         )
 
+        Spacer(modifier = Modifier.height(20.dp))
+
         OutlinedTextField(
             value = namaTxt,
             onValueChange = {namaTxt = it},
@@ -70,7 +72,7 @@ fun HalamanDataPelanggan(
             label = { Text(text = stringResource(id = R.string.telepon)) }
         )
 
-        Spacer(modifier = Modifier.height(15.dp))
+        Spacer(modifier = Modifier.height(25.dp))
 
         Row(
         ) {
@@ -80,7 +82,7 @@ fun HalamanDataPelanggan(
                 Text(text = stringResource(id = R.string.cancel))
             }
 
-            Spacer(modifier = Modifier.padding(5.dp))
+            Spacer(modifier = Modifier.padding(38.dp))
 
             Button(onClick = { onSubmitButtonClicked(listData) }) {
                 Text(text = stringResource(id = R.string.selanjutnya))
