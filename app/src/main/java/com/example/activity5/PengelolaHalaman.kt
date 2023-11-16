@@ -29,7 +29,8 @@ import com.example.activity5.data.SumberData.flavors
 enum class PengelolaHalaman {
     Home,
     Rasa,
-    Summary
+    Summary,
+    Formulir
 }
 
 @Composable
@@ -79,9 +80,19 @@ fun Activity5App(
         {
             composable(route = PengelolaHalaman.Home.name) {
                 HalamanHome(onNextButtonClicked = {
-                    navController.navigate(PengelolaHalaman.Rasa.name)
+                    navController.navigate(PengelolaHalaman.Formulir.name)
                 })
             }
+
+            composable(route = PengelolaHalaman.Formulir.name) {
+                HalamanDataPelanggan(
+                    onCancelButtonClicked = { cancelOrderAndNavigateToHome(viewModel, navController) },
+                    onSubmitButtonClicked = {
+                        viewModel.setContact(it)
+                        navController.navigate(PengelolaHalaman.Rasa.name)
+                    })
+            }
+
             composable(route = PengelolaHalaman.Rasa.name) {
                 val context = LocalContext.current
                 HalamanSatu(

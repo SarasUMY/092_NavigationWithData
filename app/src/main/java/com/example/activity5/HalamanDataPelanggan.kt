@@ -2,9 +2,11 @@ package com.example.activity5
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.OutlinedTextField
@@ -22,7 +24,7 @@ import androidx.compose.ui.unit.dp
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HalamanSatu(
+fun HalamanDataPelanggan(
     onSubmitButtonClicked: (MutableList<String>) -> Unit,
     onCancelButtonClicked: () -> Unit,
 ) {
@@ -40,16 +42,16 @@ fun HalamanSatu(
 
     var listData: MutableList<String> = mutableListOf(namaTxt, alamatTxt, tlpnTxt)
 
-    Text(
-        text = "Data Pelanggan",
-        fontWeight = FontWeight.Bold
-    )
-
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
         modifier = Modifier.fillMaxSize()
     ) {
+        Text(
+            text = "Data Pelanggan",
+            fontWeight = FontWeight.Bold
+        )
+
         OutlinedTextField(
             value = namaTxt,
             onValueChange = {namaTxt = it},
@@ -70,14 +72,19 @@ fun HalamanSatu(
 
         Spacer(modifier = Modifier.height(15.dp))
 
-        Button(
-            onClick = onCancelButtonClicked
+        Row(
         ) {
-            Text(text = stringResource(id = R.string.cancel))
-        }
+            Button(
+                onClick = onCancelButtonClicked
+            ) {
+                Text(text = stringResource(id = R.string.cancel))
+            }
 
-        Button(onClick = { onSubmitButtonClicked(listData) }) {
-            Text(text = stringResource(id = R.string.selanjutnya))
+            Spacer(modifier = Modifier.padding(5.dp))
+
+            Button(onClick = { onSubmitButtonClicked(listData) }) {
+                Text(text = stringResource(id = R.string.selanjutnya))
+            }
         }
     }
 }
