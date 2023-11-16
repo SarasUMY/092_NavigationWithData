@@ -29,7 +29,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.activity5.ui.theme.Activity5Theme
 
 @Composable
 fun HalamanSatu(
@@ -88,7 +90,7 @@ fun HalamanSatu(
                     }
                 )
                 Button(
-                    modifier =Modifier.weight(1f),
+                    modifier = Modifier.weight(1f),
                     enabled = textJmlBeli.isNotEmpty(),
                     onClick = { onConfirmButtonClicked(textJmlBeli.toInt()) }
                 ) {
@@ -111,8 +113,15 @@ fun HalamanSatu(
             ) {
                 OutlinedButton(
                     modifier = Modifier.weight(1f),
+                    onClick = onCancelButtonClicked
+                ) {
+                    Text(stringResource(R.string.cancel))
+                }
+
+                Button(
+                    modifier = Modifier.weight(1f),
                     enabled = textJmlBeli.isNotEmpty(),
-                    onClick = { onNextButtonClicked }
+                    onClick =  onNextButtonClicked
                 ) {
                     Text(stringResource(R.string.next))
                 }

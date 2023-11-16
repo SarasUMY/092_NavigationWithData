@@ -42,7 +42,7 @@ fun HalamanHome(
             ),
             border = BorderStroke(1.dp, Color.Black), modifier = Modifier
                 .fillMaxWidth(0.95f)
-                .padding(vertical = 200.dp)
+                .padding(vertical = 50.dp)
                 .align(Alignment.CenterHorizontally)
         ) {
             Column(

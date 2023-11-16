@@ -89,12 +89,8 @@ fun Activity5App(
                     onSelectionChanged = {viewModel.setRasa(it)},
                     onConfirmButtonClicked = {viewModel.setJumlah(it)},
                     onNextButtonClicked = { navController.navigate(PengelolaHalaman.Summary.name) },
-                    onCancelButtonClicked = {
-                        cancelOrderAndNavigateToHome(
-                            viewModel,
-                            navController
-                        )
-                    })
+                    onCancelButtonClicked = { cancelOrderAndNavigateToHome(viewModel, navController) }
+                )
             }
             composable(route = PengelolaHalaman.Summary.name) {
                 HalamanDua(
