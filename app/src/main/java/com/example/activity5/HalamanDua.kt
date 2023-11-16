@@ -17,6 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
 import com.example.activity5.data.OrderUIState
 import com.example.activity5.ui.komponen.FormatLabelHarga
 
@@ -38,6 +39,21 @@ fun HalamanDua(
             modifier = Modifier.padding(dimensionResource(R.dimen.padding_medium)),
             verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_small))
         ) {
+            Text(text = stringResource(id = R.string.nama))
+            Text(text = orderUIState.nama)
+            Divider()
+            Spacer(modifier = Modifier.padding(8.dp))
+
+            Text(text = stringResource(id = R.string.alamat))
+            Text(text = orderUIState.alamat)
+            Divider()
+            Spacer(modifier = Modifier.padding(8.dp))
+
+            Text(text = stringResource(id = R.string.telepon))
+            Text(text = orderUIState.tlp)
+            Divider()
+            Spacer(modifier = Modifier.padding(8.dp))
+
             items.forEach { item ->
                 Column {
                     Text(item.first.uppercase())

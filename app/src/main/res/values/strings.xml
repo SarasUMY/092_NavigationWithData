@@ -5,9 +5,9 @@
     <string name="next">Lanjut</string>
     <string name="selanjutnya">Selanjutnya</string>
     <string name="cancel">Batal</string>
-    <string name="nama">Nama</string>
+    <string name="nama">Nama Pelanggan</string>
     <string name="alamat">Alamat</string>
-    <string name="telepon">Telepon</string>
+    <string name="telepon">No. Telepon</string>
     <string name="vanilla">Vanilla</string>
     <string name="lemon">Lemon</string>
     <string name="original">Original</string>
